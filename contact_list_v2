@@ -1,0 +1,34 @@
+top_menu_option = int(input("Please select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+
+while top_menu_option != 3:
+##Prompt the user for an action based on the above selection
+  if top_menu_option == 1:
+    first_name = input("Please enter the contact's first name:")
+    last_name = input("Please enter the contact's last name:")
+    phone_number = input("Please enter the contact's phone number:")
+    email_address = input("Please enter the contact's email address:")
+    
+    ##Combie the above inputs into a tuple to recall later
+    contact = (first_name, last_name, phone_number, email_address)
+
+    top_menu_option = input("\nPlease select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n ")
+
+    contact_list = contact
+
+    top_menu_option = int(top_menu_option)
+
+  elif top_menu_option == 2:
+    ##for x in contacts:
+    print(contact_list)
+    top_menu_option = int(input("\nPlease select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+
+    #top_menu_option = int(top_menu_option)
+  elif top_menu_option == 3:
+    int(top_menu_option = input("Please select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+  else:
+    print("You did not make a proper selection.")
+    break
+if top_menu_option ==3:
+  print("System exited")
+
+
