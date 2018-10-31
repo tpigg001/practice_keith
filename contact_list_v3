@@ -1,0 +1,36 @@
+#This is the starting menu for the program
+top_menu_option = int(input("Please select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+
+contact_list = [] #the contact list that will hold the tuples
+
+while top_menu_option != 3:
+##Prompt the user for an action based on the above selection
+  if top_menu_option == 1:
+    #the individual inputs used to build the tuple
+    first_name = input("Please enter the contact's first name:")
+    last_name = input("Please enter the contact's last name:")
+    phone_number = input("Please enter the contact's phone number:")
+    email_address = input("Please enter the contact's email address:")
+    
+    ##Combie the above inputs into a tuple to recall later
+    contact = [(first_name, last_name, phone_number, email_address)]
+    #
+    ##Need to add a way to add new tuples
+    contact_list.append(contact)
+
+    top_menu_option = int(input("\nPlease select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+
+  elif top_menu_option == 2:
+    print(contact_list)
+    top_menu_option = int(input("\nPlease select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+
+  elif top_menu_option == 3:
+    int(top_menu_option = input("Please select an option using the associated number: \n(1) Add new contact\n(2) View all contacts\n(3) Quit\n "))
+  else:
+    print("You did not make a proper selection.")
+    break
+    
+if top_menu_option ==3:
+  print("System exited")
+
+
