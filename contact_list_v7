@@ -1,0 +1,72 @@
+#Define function for the start menu
+def menu_option():
+  print("")
+  print("WHAT WOULD YOU LIKE TO DO?")
+  print("="*26)
+  print("(1) Add a new contact")
+  print("(2) View all of your contacts")
+  print("(3) Quit")
+  print("")
+  
+
+#Display the menu
+menu_option()
+
+#Ask for user input
+top_menu_option = input("\nPlease select one of the above options?")
+
+#Define and create empty list
+contact_list = [] #the contact list that will hold the tuples
+
+#This keeps the top_menu_option loop running 
+is_running = True
+while is_running:
+
+##Prompt the user for an action based on the above selection
+  if top_menu_option == '1':
+    #the individual inputs used to build the tuple
+    print("")
+    print("Alright, enter the contact's information below.")
+    first_name = input("Please enter the contact's first name:")
+    last_name = input("Please enter the contact's last name:")
+    phone_number = input("Please enter the contact's phone number:")
+    email_address = input("Please enter the contact's email address:")
+    
+    ##Combie the above inputs into a tuple to recall later
+    contact = (first_name, last_name, phone_number, email_address)
+  
+    #append the new contacts to the existing contact_list
+    contact_list.append(contact)
+    #return to the top menu
+    menu_option()
+    top_menu_option = input("\nPlease select one of the above options?")
+
+  elif top_menu_option == '2':
+      if len(contact_list) == 0:
+        print("")
+        print("No contacts 'genius'.")
+        menu_option()
+        top_menu_option = input("\nPlease select one of the above options?")
+      else:
+      #t represents an element in the tuple
+        for index, contact in enumerate(contact_list):
+          print("")
+          print(f"Contact #{index + 1}")
+          print("=" * (9 + len(str(index))))
+          print(f"{first_name.lower().capitalize()}")
+          print(f"{last_name.lower().capitalize()}")
+          print(f"{phone_number}")
+          print(f"{email_address}")
+          print("")
+          #return to the top menu
+        menu_option()
+        top_menu_option = input("\nPlease select one of the above options?")  
+
+  elif top_menu_option == '3':
+    print("Finally. Oh by the way, I didn't save any of this meatsack")
+    break
+
+  else:
+    print("Really? '"+top_menu_option+"'. SMH (shaking my hard drive) Try again. One, two or three?")
+    menu_option()
+    top_menu_option = input("\nPlease select one of the above options?")
